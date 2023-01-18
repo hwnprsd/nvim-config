@@ -8,4 +8,4 @@ vim.cmd 'noremap dd "*dd'
 vim.cmd 'noremap D "*D'
 
 -- vim.cmd [[colorscheme noctis]]
-vim.cmd [[colorscheme dracula]]
+vim.cmd [[colorscheme nvimpire]]

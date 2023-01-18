@@ -55,7 +55,7 @@ require('packer').startup(function(use)
   use 'tpope/vim-sleuth' -- Detect tabstop and shiftwidth automatically
 
   -- Fuzzy Finder (files, lsp, etc)
-  use { 'nvim-telescope/telescope.nvim', branch = '0.1.x', requires = { 'nvim-lua/plenary.nvim' } }
+  use { 'nvim-telescope/tlescope.nvim', branch = '0.1.x', requires = { 'nvim-lua/plenary.nvim' } }
 
   -- Fuzzy Finder Algorithm which requires local dependencies to be built. Only load if `make` is available
   use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make', cond = vim.fn.executable 'make' == 1 }
@@ -156,9 +156,19 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 require('lualine').setup {
   options = {
     icons_enabled = false,
-    theme = 'onedark',
+    theme = 'auto',
     component_separators = '|',
     section_separators = '',
+  },
+  sections = {
+    lualine_c = {
+      {
+        'filename',
+        show_filename_only = false, -- Shows shortened relative path when set to false.
+        show_modified_status = true, -- Shows indicator when the window is modified.
+        path = 1,
+      },
+    },
   },
 }
 
@@ -286,9 +296,8 @@ vim.keymap.set('n', ']d', vim.diagnostic.goto_next)
 vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float)
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist)
 
-
-require("utils")
-require("custom.remap")
+require 'utils'
+require 'custom.remap'
 
 -- LSP settings.
 --  This function gets run when an LSP connects to a particular buffer.

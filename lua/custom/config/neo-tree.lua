@@ -76,7 +76,7 @@ return function()
       },
     },
     window = {
-      position = 'left',
+      position = 'right',
       width = 30,
       mapping_options = {
         noremap = true,

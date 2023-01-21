@@ -6,6 +6,7 @@ vim.cmd 'noremap Y "*y$'
 vim.cmd 'noremap x "*x'
 vim.cmd 'noremap dd "*dd'
 vim.cmd 'noremap D "*D'
+vim.cmd 'set splitright'
 
 -- vim.cmd [[colorscheme noctis]]
 vim.cmd [[colorscheme nvimpire]]

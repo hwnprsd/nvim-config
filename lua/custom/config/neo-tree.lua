@@ -88,7 +88,7 @@ return function()
           nowait = false, -- disable `nowait` if you have existing combos starting with this char that you want to use
         },
         ['<2-LeftMouse>'] = 'open',
-        ['<cr>'] = 'open',
+        ['<cr>'] = 'open_with_window_picker',
         ['<esc>'] = 'revert_preview',
         ['P'] = { 'toggle_preview', config = { use_float = true } },
         -- ["S"] = "open_split",
@@ -98,7 +98,7 @@ return function()
         ['t'] = 'open_tabnew',
         -- ["<cr>"] = "open_drop",
         -- ["t"] = "open_tab_drop",
-        ['w'] = 'open_with_window_picker',
+        ['w'] = 'open',
         --["P"] = "toggle_preview", -- enter preview mode, which shows the current node without focusing
         ['C'] = 'close_node',
         ['z'] = 'close_all_nodes',

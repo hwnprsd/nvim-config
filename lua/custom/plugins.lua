@@ -53,6 +53,8 @@ return function(use)
       }
     end,
   }
+
+  use 'dstein64/nvim-scrollview'
   -- Coloschemes
   use 'Mofiqul/dracula.nvim'
   use { 'colevoss/nvimpire' }
@@ -61,6 +63,7 @@ return function(use)
   -- Plugin Setups
   require 'custom.config.neo-tree'()
   require 'custom.config.null-ls'()
-  require('go').setup()
+  require 'custom.config.go-nvim'()
   require 'custom.config.nvimpire'()
+  require 'custom.config.solidity'()
 end
